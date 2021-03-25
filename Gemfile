@@ -9,6 +9,8 @@ gem 'hocon', '~> 1.2', require: false
 gem 'rake', '~> 13.0', require: false
 gem 'rspec', '~> 3.4', require: false
 
+gem 'facter', git: 'https://github.com/puppetlabs/facter.git', ref: 'main'
+
 group(:development, optional: true) do
   gem 'pry'
   gem 'pry-byebug'

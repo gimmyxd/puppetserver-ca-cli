@@ -74,15 +74,18 @@ module Puppetserver
         end
 
         def default_certname
-          @certname ||=
-            hostname = Facter.value(:hostname)
-            domain = Facter.value(:domain)
-            if domain and domain != ''
-              fqdn = [hostname, domain].join('.')
-            else
-              fqdn = hostname
-            end
-            fqdn.chomp('.')
+          Facter.debugging(true)
+
+          hostname = Facter.value(:hostname)
+          domain = Facter.value(:domain)
+
+          if domain and domain != ''
+            fqdn = [hostname, domain].join('.')
+          else
+            fqdn = hostname
+          end
+
+          fqdn.chomp('.')
         end
 
         # Resolve settings from default values, with any overrides for the
