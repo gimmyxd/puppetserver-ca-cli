@@ -9,7 +9,7 @@ gem 'hocon', '~> 1.2', require: false
 gem 'rake', '~> 13.0', require: false
 gem 'rspec', '~> 3.4', require: false
 
-gem 'facter', '4.0.51'
+gem 'facter', git: 'https://github.com/gimmyxd/facter.git', ref: 'FACT-2997'
 
 group(:development, optional: true) do
   gem 'pry'
